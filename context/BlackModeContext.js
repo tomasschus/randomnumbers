@@ -6,7 +6,7 @@ const BlackModeProvider = ({ children }) => {
   const [blackMode, setBlackMode] = useState(false);
 
   useEffect(() => {
-    setBlackMode(Boolean(JSON.parse(window.localStorage.getItem('blackMode'))) || false)
+    setBlackMode(window.localStorage.getItem('blackMode') === "true")
   }, [])
 
   function turnBlackMode() {
