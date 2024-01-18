@@ -35,7 +35,6 @@ const NumberInput = () => {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          height: 100vh; /* Ajusta la altura según tus necesidades */
         }
 
         .number-input {

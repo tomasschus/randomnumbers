@@ -1,5 +1,3 @@
-// components/NumberCards.js
-
 import React, { useEffect, useState } from 'react';
 import { useBlackMode } from '../context/BlackModeContext';
 
@@ -80,7 +78,6 @@ const NumberCards = ({ number }) => {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          height: 100vh;
         }
 
         .reload-button {
@@ -108,7 +105,7 @@ const NumberCards = ({ number }) => {
           display: flex;
           justify-content: center;
           align-items: center;
-          margin: 0 5px;
+          margin: 5px 5px;
           font-size: calc(5vw + 5vh); /* Ajusta el tamaño del texto según el tamaño de la tarjeta */
           font-weight: bold;
           opacity: 0;
@@ -131,6 +128,12 @@ const NumberCards = ({ number }) => {
           to {
             transform: translateY(0);
           }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .cards-container {
+              flex-wrap: wrap;
+            }
         }
       `}</style>
         </div>

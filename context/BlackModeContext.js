@@ -1,10 +1,13 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const BlackModeContext = createContext();
 
 const BlackModeProvider = ({ children }) => {
-  const initialState = (typeof window !== 'undefined' && window.localStorage.getItem('blackMode')) || false;
-  const [blackMode, setBlackMode] = useState(initialState);
+  const [blackMode, setBlackMode] = useState(false);
+
+  useEffect(() => {
+    setBlackMode(JSON.parse(window.localStorage.getItem('blackMode')) || false)
+  }, [])
 
   function turnBlackMode() {
     const newState = !blackMode;
@@ -14,7 +17,7 @@ const BlackModeProvider = ({ children }) => {
 
   return (
     <BlackModeContext.Provider value={{ blackMode, turnBlackMode }}>
-      <div style={{ backgroundColor: blackMode ? 'black' : 'white' }}>
+      <div className={blackMode ? 'black-mode' : 'white-mode'}>
         <div style={{ display: 'flex', justifyContent: 'end', padding: '20px 30px 0 0' }}>
           <div style={{ cursor: 'pointer' }} onClick={turnBlackMode}>
             <svg
@@ -41,6 +44,20 @@ const BlackModeProvider = ({ children }) => {
           </div>
         </div>
         {children}
+        
+        <style jsx global>{`
+          .black-mode {
+            background-color: black;
+            color: white;
+            height: 100vh;
+          }
+
+          .white-mode {
+            background-color: white;
+            color: black;
+            height: 100vh;
+          }
+        `}</style>
       </div>
     </BlackModeContext.Provider>
   );
