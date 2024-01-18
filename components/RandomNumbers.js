@@ -30,11 +30,13 @@ const NumberInput = () => {
             </button>
 
             <style jsx>{`
+
         .number-input-container {
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          margin: 0 0 100px 0;
         }
 
         .number-input {
