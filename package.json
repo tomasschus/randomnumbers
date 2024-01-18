@@ -2,6 +2,7 @@
   "name": "randomnumbers",
   "version": "0.1.0",
   "private": true,
+  "author": "Tomás Schuster",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
