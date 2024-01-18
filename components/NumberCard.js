@@ -99,6 +99,7 @@ const NumberCards = ({ number }) => {
         }
 
         .card {
+          user-select: none;
           flex: 1;
           border: 2px solid white;
           border-radius: 10px;
