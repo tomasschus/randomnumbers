@@ -12,12 +12,32 @@ const NumberCards = ({ number }) => {
     }, []);
 
     function getRandomColor() {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
+        var coloresBrillantes = [
+            "rgb(255, 0, 0)",       // Rojo
+            "rgb(0, 255, 0)",       // Verde
+            "rgb(0, 0, 255)",       // Azul
+            "rgb(255, 255, 0)",     // Amarillo
+            "rgb(255, 0, 255)",     // Magenta
+            "rgb(0, 255, 255)",     // Cian
+            "rgb(255, 165, 0)",     // Naranja
+            "rgb(128, 0, 128)",     // Púrpura
+            "rgb(255, 192, 203)",   // Rosa claro
+            "rgb(0, 128, 128)",     // Verde azulado
+            "rgb(255, 140, 0)",     // Melocotón
+            "rgb(70, 130, 180)",    // Azul acero
+            "rgb(255, 69, 0)",      // Rojo tomate
+            "rgb(255, 215, 0)",     // Amarillo brillante
+            "rgb(0, 255, 0)",       // Verde brillante
+            "rgb(0, 255, 255)",     // Cian brillante
+            "rgb(255, 20, 147)",     // Rosa brillante
+            "rgb(255, 165, 0)",     // Naranja brillante
+            "rgb(70, 130, 180)",     // Azul acero brillante
+            "rgb(255, 69, 0)"       // Rojo tomate brillante
+        ];
+
+        var indice = Math.floor(Math.random() * coloresBrillantes.length);
+
+        return coloresBrillantes[indice];
     }
 
     function loadCards() {
